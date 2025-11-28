@@ -36,6 +36,181 @@
 <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css/">
 <style>
+
+
+:root {
+    --bg: linear-gradient(to bottom right, #f9e8e2, #d0e7f9);
+    --text-main: #333;
+    --accent: #a46ccf;
+    --card-bg: rgba(255, 255, 255, 0.6);
+    --glass: blur(8px);
+}
+
+/* ==================================== */
+
+/* 2. RESET & BODY */
+
+/* ==================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
+     overflow-x: hidden; 
+    color: var(--text-main);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* ==================================== */
+
+/* 3. HEADER: Round Logo + Name */
+
+/* ==================================== */
+
+header {
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: var(--glass);
+    z-index: 10;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Round logo placeholder */
+
+.round-logo {
+    width: 45px;
+    height: 45px;
+    background: #ddd;
+    border-radius: 50%;
+    background-image: url('img.png');
+    /* Replace with your logo */
+    background-size: cover;
+    background-position: center;
+    background-size: 170%;
+}
+
+.logo {
+    font-family: 'Caveat', cursive;
+    font-size: 1.8rem;
+    color: var(--accent);
+}
+
+/* ==================================== */
+
+/* 4. NAVBAR: Better spacing, hover, active */
+
+/* ==================================== */
+
+.nav {
+    display: flex;
+    gap: .3rem;
+    align-items: center;
+}
+
+.nav a,
+.nav-btn {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-main);
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Hover effect */
+
+.nav a:hover,
+.nav-btn:hover {
+    background: var(--accent);
+    color: white;
+}
+
+/* Active page highlight */
+
+.nav a.active {
+    background: var(--accent);
+    color: white;
+    font-weight: 600;
+}
+
+/* Dropdown */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(192, 192, 192, 0.3);
+    min-width: 160px;
+    border-radius: 6px;
+    backdrop-filter: var(--glass);
+    z-index: 1;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 1rem;
+}
+
+.dropdown-content a:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+
+footer {
+    padding: 1.5rem;
+    text-align: center;
+    font-size: .9rem;
+    color: #888;
+}
+
+.privacy-link {
+    color: var(--accent);
+}
+
+.privacy-link:hover {
+    color: #8a54b3;
+}
+
     .page-title {
         text-align: center;
         padding: 3rem 1rem 1.5rem;
@@ -129,9 +304,44 @@
         .entry a {
             font-size: 1.1rem
         }
-        .nav{gap:.1rem;flex-wrap:nowrap; justify-content:center}.nav a,.nav-btn{padding:.5rem .5rem;font-size:.9rem} 
 
+
+
+    header {
+        padding: 0.7rem 1rem;
+        flex-wrap: wrap;
+        gap: 0.5rem;
     }
+    .header-left {
+        gap: 6px;
+    }
+    .round-logo {
+        width: 36px;
+        height: 36px;
+    }
+    .logo {
+        font-size: 1.4rem;
+    }
+    .nav{gap:.1rem;flex-wrap:nowrap;  justify-content:center}.nav a,.nav-btn{padding:.5rem .5rem;font-size:.9rem} 
+    .dropdown-content {
+        min-width: 130px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .realms {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 2rem 1rem;
+    }
+    
+    footer p {
+        font-size: 0.8rem;
+    }
+}
+
+
+    
 </style>
 <header>
     <div class=header-left>
